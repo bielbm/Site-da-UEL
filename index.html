@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SitePerfect - UEL</title>
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        scroll-behavior: smooth;
+        background: #fdfdfd;
+    }
+    header {
+        background: #e0f0ff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    header div:first-child {
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+    nav a {
+        margin: 0 8px;
+        text-decoration: none;
+        color: white;
+        background: #0099ff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        transition: background 0.3s;
+    }
+    nav a:hover {
+        background: #007acc;
+    }
+    .right-buttons button {
+        margin-left: 10px;
+        border: none;
+        background: black;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    .user-area {
+        display: none;
+        margin-left: 10px;
+        font-size: 0.9rem;
+        color: #333;
+    }
+    section {
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: auto;
+    }
+    .login-page,
+    .register-page {
+        display: none;
+        padding: 50px 20px;
+        background: #f0f0f0;
+    }
+    .form-box {
+        max-width: 400px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .green-btn {
+        width: 100%;
+        background: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .green-btn:hover {
+        background: #43a047;
+    }
+    </style>
+</head>
+<body>
+    <header>
+    <div>SitePerfect</div>
+    <nav id="nav-bar">
+        <a href="#" onclick="voltarParaHome()">Início</a>
+        <a href="#historia">História</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#escolhido">Escolhido</a>
+    </nav>
+    <div class="right-buttons">
+        <button onclick="showLogin()" id="btn-login">Entrar</button>
+        <button onclick="showRegister()" id="btn-register">Cadastrar-se</button>
+        <span class="user-area" id="user-area"
+        >Bem-vindo, <span id="user-email"></span>!</span
+        >
+    </div>
+    </header>
+
+    <div id="main-page">
+    <section id="inicio">
+        <h2>Universidade Estadual de Londrina (UEL)</h2>
+        <p><strong>Localização:</strong></p>
+        <p>
+        Apresentação Geral<br />
+        Nome completo: Universidade Estadual de Londrina (UEL)<br />
+        Sigla: UEL<br />
+        Localização: Londrina, Paraná, Brasil<br />
+        Campus: Único, situado na Rodovia Celso Garcia Cid (PR-445), Km 380,
+        Londrina - PR
+        </p>
+    </section>
+
+    <section id="historia">
+        <h2>História e Missão</h2>
+        <p>
+        A UEL foi criada oficialmente em 6 de novembro de 1969. Ela nasceu da
+        união de faculdades que já existiam em Londrina, para ajudar no
+        desenvolvimento regional. Hoje, é uma das maiores universidades
+        estaduais do Brasil, com destaque em ensino, pesquisa e extensão.
+        </p>
+    </section>
+
+    <section id="cursos">
+        <h2>Cursos de Graduação</h2>
+        <h3>Ciências Exatas e Tecnológicas:</h3>
+        <ul>
+        <li>Arquitetura e Urbanismo</li>
+        <li>Biblioteconomia (Matutino e Noturno)</li>
+        <li>Ciência da Computação</li>
+        <li>Ciências Contábeis (Matutino e Noturno)</li>
+        <li>Ciências Econômicas (Matutino e Noturno)</li>
+        <li>Engenharia Civil</li>
+        <li>Engenharia Elétrica</li>
+        <li>Física (Integral e Noturno)</li>
+        <li>Matemática (Matutino e Noturno)</li>
+        </ul>
+
+        <h3>Ciências Biológicas e da Saúde:</h3>
+        <ul>
+        <li>Agronomia</li>
+        <li>Biomedicina</li>
+        <li>Ciências Biológicas (Bacharelado e Licenciatura)</li>
+        <li>Educação Física (Matutino e Noturno)</li>
+        <li>Enfermagem</li>
+        <li>Farmácia</li>
+        <li>Fisioterapia</li>
+        <li>Medicina</li>
+        <li>Medicina Veterinária</li>
+        <li>Nutrição</li>
+        <li>Odontologia</li>
+        <li>Psicologia</li>
+        <li>Química (Integral e Noturno)</li>
+        <li>Zootecnia</li>
+        </ul>
+
+        <h3>Ciências Humanas, Sociais e Artes:</h3>
+        <ul>
+        <li>Administração (Matutino e Noturno)</li>
+        <li>Arquivologia (Noturno)</li>
+        <li>Artes Cênicas (Matutino)</li>
+        <li>Artes Visuais</li>
+        <li>Ciências Sociais (Matutino e Noturno)</li>
+        <li>Comunicação Social – Jornalismo (Matutino e Noturno)</li>
+        <li>Comunicação Social – Relações Públicas (Matutino e Noturno)</li>
+        <li>Design de Moda (Matutino)</li>
+        <li>Design Gráfico (Matutino)</li>
+        <li>Direito (Matutino)</li>
+        <li>Educação Artística (Matutino e Noturno)</li>
+        <li>Filosofia (Noturno)</li>
+        <li>Geografia (Matutino e Noturno)</li>
+        <li>História (Matutino e Noturno)</li>
+        <li>
+            Letras – Português, Inglês, Francês, Espanhol (Vespertino e Noturno)
+        </li>
+        <li>Música (Vespertino)</li>
+        <li>Pedagogia (Matutino, Vespertino e Noturno)</li>
+        <li>Secretariado Executivo (Noturno)</li>
+        <li>Serviço Social (Matutino e Noturno)</li>
+        </ul>
+
+        <h3>Cursos a Distância (EaD):</h3>
+        <ul>
+        <li>Computação – Licenciatura</li>
+        <li>Pedagogia</li>
+        <li>Tecnologia em Gestão Pública</li>
+        </ul>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre</h2>
+        <p><strong>Nota ENADE:</strong> 4 em 2023.</p>
+        <p>
+        <strong>Infraestrutura:</strong> moderna e professores especialistas
+        em várias áreas da computação.
+        </p>
+        <p>
+        <strong>Endereço:</strong> Rodovia Celso Garcia Cid – PR 445, Km 380,
+        Londrina – PR
+        </p>
+
+        <p><strong>Estrutura Física:</strong></p>
+        <ul>
+        <li>Labs de informática</li>
+        <li>Labs de redes e IA</li>
+        <li>Biblioteca</li>
+        <li>Salas modernas</li>
+        </ul>
+
+        <p><strong>Formas de Ingresso:</strong></p>
+        <ul>
+        <li>Vestibular próprio da UEL</li>
+        <li>SISU (usando nota do ENEM)</li>
+        <li>Prova Paraná Mais</li>
+        <li>Transferência externa</li>
+        <li>Portador de diploma</li>
+        <li>Vestibular dos Povos Indígenas do Paraná</li>
+        </ul>
+
+        <p><strong>Destaques do Corpo Docente:</strong></p>
+        <ul>
+        <li>Adilson Luiz Bonifácio</li>
+        <li>Anderson Paulo Ávila Santos</li>
+        <li>Bruno Bogaz Zarpelão</li>
+        <li>Bruno Squizato Faical</li>
+        <li>Cinthyan Renata Sachs Camerlengo de Barbosa</li>
+        <li>Daniel dos Santos Kaster</li>
+        <li>Helen Cristina de Mattos Senefonte</li>
+        <li>Mario Lemes Proença Júnior</li>
+        <li>Vanessa Matias Leite</li>
+        <li>Wesley Attrot</li>
+        </ul>
+    </section>
+
+    <section id="escolhido">
+        <h2>Curso Escolhido</h2>
+        <p><strong>Curso:</strong> Ciência da Computação</p>
+        <p>
+        O curso é integral, com duração média de 4 anos (8 semestres). A
+        matriz curricular é dividida por ano, com disciplinas teóricas e
+        práticas que abrangem desde fundamentos matemáticos até tecnologias
+        avançadas.
+        </p>
+
+        <h3>Grade Curricular:</h3>
+        <ul>
+        <li>
+            <strong>1º Ano</strong>
+            <ul>
+            <li>Introdução à Computação</li>
+            <li>Lógica Matemática</li>
+            <li>Fundamentos de Programação</li>
+            <li>Cálculo I</li>
+            <li>Álgebra Linear</li>
+            <li>Comunicação e Expressão</li>
+            <li>Estruturas de Dados I</li>
+            <li>Arquitetura de Computadores I</li>
+            <li>Cálculo II</li>
+            <li>Matemática Discreta</li>
+            <li>Probabilidade e Estatística</li>
+            </ul>
+        </li>
+        <li>
+            <strong>2º Ano</strong>
+            <ul>
+            <li>Programação Orientada a Objetos</li>
+            <li>Estruturas de Dados II</li>
+            <li>Empreendedorismo</li>
+            <li>Cálculo Vetorial e Variáveis Complexas</li>
+            <li>Arquitetura de Computadores II</li>
+            <li>Laboratório de Programação</li>
+            <li>Cálculo Numérico</li>
+            <li>Linguagens Formais e Autômatos</li>
+            <li>Engenharia de Software I</li>
+            <li>Equações Diferenciais</li>
+            <li>Processos Estocásticos</li>
+            </ul>
+        </li>
+        <li>
+            <strong>3º Ano</strong>
+            <ul>
+            <li>Banco de Dados I</li>
+            <li>Sistemas Operacionais</li>
+            <li>Redes de Computadores I</li>
+            <li>Compiladores I</li>
+            <li>Inteligência Artificial</li>
+            <li>Engenharia de Software II</li>
+            <li>Análise e Projeto de Algoritmos</li>
+            <li>Banco de Dados II</li>
+            <li>Metodologia de Pesquisa para a Computação</li>
+            <li>Redes de Computadores II</li>
+            <li>Aprendizado de Máquina</li>
+            <li>Computação Gráfica</li>
+            <li>Compiladores II</li>
+            </ul>
+        </li>
+        <li>
+            <strong>4º Ano</strong>
+            <ul>
+            <li>Computabilidade e Decidibilidade</li>
+            <li>Governança de TI</li>
+            <li>Sistemas Distribuídos</li>
+            <li>Tópicos em Computação</li>
+            <li>Processamento de Imagens</li>
+            <li>Interação Humano-Computador</li>
+            <li>Trabalho de Conclusão de Curso I (TCC I)</li>
+            <li>Estágio Curricular Obrigatório</li>
+            <li>Trabalho de Conclusão de Curso II (TCC II)</li>
+            </ul>
+        </li>
+        </ul>
+
+        <h3>Atividades Complementares:</h3>
+        <ul>
+        <li>
+            Atividades de Extensão (AEX):
+            <ul>
+            <li>172 horas indicadas</li>
+            <li>171 horas livres</li>
+            </ul>
+        </li>
+        <li>
+            Atividades Acadêmicas Complementares:
+            <ul>
+            <li>
+                110 horas (como monitorias, projetos de pesquisa e ensino)
+            </li>
+            </ul>
+        </li>
+        </ul>
+
+        <p>
+        <strong>Observações:</strong><br />
+        Turno: Integral<br />
+        Duração: Mínima de 4 anos, máxima de 8 anos<br />
+        Carga Horária Total: Aproximadamente 3.000 horas
+        </p>
+    </section>
+    </div>
+
+    <div class="login-page" id="login-page">
+    <div class="form-box">
+        <h2>Login</h2>
+        <form method="POST" action="/login">
+        <input
+            type="email"
+            id="login-email"
+            name="usuario"
+            placeholder="nome@email.com"
+            required
+        />
+        <input
+            type="password"
+            id="login-password"
+            name="senha"
+            placeholder="Senha"
+            required
+        />
+        <button class="green-btn" type="button" onclick="loginUser()">
+            Fazer login
+        </button>
+        </form>
+        <p>
+        <a href="#" onclick="showRegister()">Não tem conta? Cadastre-se</a>
+        </p>
+    </div>
+    </div>
+
+    <div class="register-page" id="register-page">
+    <div class="form-box">
+        <h2>Cadastrar-se</h2>
+        <form method="POST" action="/register">
+        <input
+            type="email"
+            id="register-email"
+            name="usuario"
+            placeholder="nome@email.com"
+            required
+        />
+        <input
+            type="password"
+            id="register-password"
+            name="senha"
+            placeholder="Senha"
+            required
+        />
+        <button class="green-btn" type="button" onclick="registerUser()">
+            Cadastrar
+        </button>
+        </form>
+        <p><a href="#" onclick="showLogin()">Já tem conta? Fazer login</a></p>
+    </div>
+    </div>
+
+    <script>
+    function showLogin() {
+        document.getElementById("main-page").style.display = "none";
+        document.getElementById("register-page").style.display = "none";
+        document.getElementById("login-page").style.display = "block";
+
+        document.getElementById("login-email").value = "Xande@email.com";
+        document.getElementById("login-password").value = "123456";
+    }
+
+    function showRegister() {
+        document.getElementById("main-page").style.display = "none";
+        document.getElementById("login-page").style.display = "none";
+        document.getElementById("register-page").style.display = "block";
+
+        document.getElementById("register-email").value = "NovoXande@email.com";
+        document.getElementById("register-password").value = "abc123";
+    }
+
+    function loginUser() {
+        const email = document.getElementById("login-email").value;
+        loginSuccess(email);
+    }
+
+    function registerUser() {
+        const email = document.getElementById("register-email").value;
+        loginSuccess(email);
+    }
+
+    function loginSuccess(email) {
+        document.getElementById("login-page").style.display = "none";
+        document.getElementById("register-page").style.display = "none";
+        document.getElementById("main-page").style.display = "block";
+        document.getElementById("btn-login").style.display = "none";
+        document.getElementById("btn-register").style.display = "none";
+        document.getElementById("user-area").style.display = "inline";
+        document.getElementById("user-email").innerText = email.split("@")[0];
+    }
+
+    function voltarParaHome() {
+        document.getElementById("main-page").style.display = "block";
+        document.getElementById("login-page").style.display = "none";
+        document.getElementById("register-page").style.display = "none";
+        window.location.hash = "#inicio";
+    }
+    </script>
+</body>
+</html>
